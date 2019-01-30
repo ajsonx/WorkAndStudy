@@ -21,10 +21,45 @@
 function Test2(){
     define(a,'s');
     /* const b = 's'; must be declared at the top-level scope */
-    echo 'ss';
-
 }
 const abc = 2;
 class teacher{
     const school = 'MNNU';
 }
+
+/*
+ * Class Constant 类常量
+ * 可以看作静态成员属性
+ */
+class MyClass
+{
+    const constant = 'constant value';
+
+    function showConstant() {
+        echo  self::constant . "\n";
+    }
+}
+
+echo MyClass::constant . "\n";
+
+$classname = "MyClass";
+echo $classname::constant . "\n"; // 自 5.3.0 起
+
+$class = new MyClass();
+$class->showConstant();
+
+echo $class::constant."\n"; // 自 PHP 5.3.0 起
+//均可输出constant value
+
+/*
+ * 和 heredoc 不同，nowdoc 可以用在任何静态数据中。
+ * Nowdoc 支持是在 PHP 5.3.0 新增的。
+ * heredoc <<<EOT EOF EOD
+ * nowdoc <<<'EOT' 需要带单引号
+ */
+class foo{
+    const bar = <<<'EOT'
+bar
+EOT;
+}
+echo foo::bar;
