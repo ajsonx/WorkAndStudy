@@ -76,19 +76,3 @@ $still_obj1 = get_instance_ref();
 $obj2 = get_instance_noref();
 $still_obj2 = get_instance_noref();
 //1有结果，2没有。
-
-/*
- * const 和 define()的区别
- * php5.3以后可以使用const，
- * 1.define()在执行期定义常量，而const在编译期定义常量，有轻微的速度优势。
- * 2.const 定义必须放在第一行
- * 3.
- */
-const abc = 2;
-function Test2(){
-
-
-}
-class teacher{
-    const school = 'MNNU';
-}
