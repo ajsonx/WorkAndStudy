@@ -53,3 +53,12 @@
     //echo $_ENV["USER"]."\n";
     //echo $_ENV['COMPUTERNAME'];
     var_dump($_ENV);
+    /*
+     * PHP中的$_ENV存储了一些系统的环境变量，因为牵扯到实际的操作系统，所以不可能给出$_ENV的完整列表。
+     * $_ENV为空的可能原因：
+     * php.ini的variables_order值为"GPCS"，也就是说系统在定义PHP预定义变量时的顺序是 GET,POST,COOKIES,SERVER,没有定义Environment(E)，
+     * 可以修改php.ini文件的 variables_order值为你想要的顺序，如："EGPCS"。这时，$_ENV的值就可以取得了。
+     * EGPCS是Environment、Get、Post、Cookies、Server的缩写，这是PHP中外部变量来源的全部范围，可以用print_r($_ENV)来打印这个变量，查看他的数据。
+     * 注意，生产环境下，$_ENV都是空数组，主要是为了安全起见，不让它获取操作系统信息！
+     * $_ENV，PHP的第9个超全局变量
+     */
