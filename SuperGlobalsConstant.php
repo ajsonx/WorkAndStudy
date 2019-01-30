@@ -37,18 +37,19 @@
      echo $_SERVER['PATH_TRANSLATED']."\n";
      echo $_SERVER['SCRIPT_NAME']."\n";
     **/
-   
-    /** 
+
+    /**
     * $_REQUEST 收集表单提交的数据
     * $_REQUEST['任意表单名']
-    *
-    * $_POST $_GET  
+    * $_GET
+    * $_POST
+    * $_SERVER
+    * $GLOBALS
     * $_FILES 处理文件上传
     * $_ENV 通过环境方式传给当前脚本变量的数组，一般是当前系统环境
     * $_COOKIE  存在于客户端，可设置过期时间，根据过期时间不同保存在内存，硬盘，浏览器缓存。大小3K 之内
     * $_SESSION  保存在服务器上 安全性更高，访问增多占用服务器性能，这是考虑COOKIE
     **/
-   
     //echo $_ENV["USER"]."\n";
     //echo $_ENV['COMPUTERNAME'];
     var_dump($_ENV);
