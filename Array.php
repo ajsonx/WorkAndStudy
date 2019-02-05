@@ -34,11 +34,31 @@
 	*
 	**/
 	//双引号单引号都能解析字符串
-	$strArr = array('a','b','z','c','sort','array','zzzz');
-	$znArr = array("你","我是你爹","嗯冲");
-//	sort($strArr);
-	sort($znArr);
-//	print_r($strArr);print_r($znArr);
-	ksort($strArr);		
-	print_r($strArr);
 
+	/*
+	 * PHP 数组是通过哈希表(HashTable)表实现的，
+	 * 因此 foreach 遍历数组时是依据元素添加的先后顺序来进行的。
+	 * 如果想按照索引大小遍历，应该使用 for() 循环遍历。
+	 * foreach 所操作的是指定数组的一个拷贝，而不是该数组本身。
+	 * 对返回的数组单元的修改也不会影响原数组（见下面例子）
+	 * php7 新版本foreach 数组指针不移动 php5版本数组指针移动
+	 */
+    $strArr = array('a','b','z','c','sort','array','zzzz');
+    print_r($strArr);
+    foreach($strArr as $value){
+        echo $value.PHP_EOL;
+    }
+    /*
+     * reset()重置数组指针，移到最上方
+     * key() 返回当前指针的key值
+     * current() 返回当前指针的value值
+     * next() 将数组指针向下移动一格
+     * end() 将数组指针移动到最后一个
+     */
+    $znArr = array(1 => "你",2 => "我是你爹", 3 => "嗯冲",'X' => 'hello');
+    echo key($znArr);
+	echo current($znArr);
+    $v = next($znArr); //value
+    echo "next is $v \n";
+    echo key($znArr);
+    echo current($znArr);
