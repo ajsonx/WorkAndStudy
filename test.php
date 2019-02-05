@@ -13,3 +13,25 @@ function sum(){
     echo $a.' '.$x.' '.$b."\n";
 }
 sum();
+$a = 3; $b = 5;
+if($a = 5 || $b = 7){
+    $a++;
+    $b++;
+}
+echo $a.' '.$b.PHP_EOL;
+mt_rand(1,5);//返回结果速度比rand快
+echo mt_getrandmax().PHP_EOL; //默认是2^31-1
+$flag = rand(1,5); //包含边界值
+switch ($flag){
+    case '1':
+        echo 1;
+        break;
+    case '2':
+        echo 2;
+        break;
+    case '3':
+        echo 3;
+        break;
+    default:
+        break;
+}
