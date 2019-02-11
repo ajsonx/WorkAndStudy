@@ -21,8 +21,9 @@ function Test(){
  * 静态变量仅在局部函数域中存在，但当程序执行离开此作用域时，其值并不丢失。
  * 保证$a变量只有在函数第一次调用时才会被初始化
  * static变量不会存储引用
+ * 方法命名使用小写开头的驼峰命名，类命名使用大写驼峰命名
  */
-function Test1(){
+function testOne(){
     static $a = 0; /*static variable 静态变量不能用表达式或者函数声明 如：$a = 1+1; */
     echo $a;
     $a++;
