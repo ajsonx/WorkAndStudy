@@ -1,0 +1,8 @@
+PHP不区分大小写,函数大小写无所谓
+
+1. gettype($a) 查看$a变量类型
+2. empty() 判断boolean值是否为false
+3. is_string(),is_
+4. define("a",123) 定义常量，常量一但定义便不能重新定义或取消。只有前者会起作用
+5. defined("a") 检测常量是否被定义
+6.
