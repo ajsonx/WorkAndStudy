@@ -1,0 +1,53 @@
+1.PHP（Personal Home Page）是一种 解释型的语言/嵌入式脚本语言 基于Zend引擎
+
+2.PHP ----> OperateCode(操作码) ----> Zend引擎 ----> C ----> 汇编语言 ---->机器码
+
+3.JavaScript和PHP的区别：
+JavaScript会把 空对象 和 空数组 转换为Boolean值为true，PHP会转换为false
+PHP实参大于形参不报错，少于时，未指定的形参和未定义的形参会报错，JS则不会
+JavaScript 字符串使用 + 或 += 进行连接，PHP使用 . 或 .=
+PHP函数名不区分大小写，JS严格区分大小写
+PHP有静态变量/JS没有
+
+4.PHP版本差异
+V5.2 autoload、PDO、mysqli、类型约束、JSON支持
+V5.3 新增匿名函数、魔术方法、命名空间、后期静态绑定、heredoc、nowdoc、const、三元运算符
+V5.4 新增ShortOpenTag、数组简写形式、Traits、内置Web服务器等
+V5.5 新增yield、list（）用于foreach；等
+V5.6 新增常量增强、可变函数参数、命名空间增强等
+V7.0 新增空合并运算符、变量类型声明、返回值类型声明、太空船操作符等
+V7.1 新增可空类型、list的方括号简写、允许在list中制定key、void返回类型等
+
+5. B/S依托浏览器 C/S 需要安装客户端
+
+6.PHP中单引号（'）与双引号（"）的区别
+(1)单引号不能解析变量，双引号可以解析变量 但$a 后不能跟字母数字下划线，会引起语法错误 如："$a." / 或者用{}包含 "{$a}"
+(2)双引号解析转义字符 单引号不能解析 但是能解析"'\"和"\\"单引号字符
+(3)单引号效率更高
+
+7.转义字符 \r \n \t \f
+
+8.php-l 对指定php代码进行语法检查 php-l demo.php
+php-m 查看已加载模块
+php-r 直接运行php代码 php-r '<?php ?>';
+
+9.heredoc  <<<'EOC'  EOC
+$test = <<<'EOC'
+    $a ab
+    EOC;
+$test的值为"$a ab"; heredoc中不解析变量 EOC可替换为其他字符
+
+10.PHP数据类型分为三种
+(1)标量类型:Integer,Float,String,Boolean
+(2)复合类型:Array,Object 数组和对象
+(3)特殊类型:Resource,Null 例如 打开文件、数据库连接、图形画布区域等为资源类型 ，是外部资源的一个引用
+
+11.Boolean 为false 的其他类型有
+false，0，0.0，空字符串，'0'，空数组，NULL,未定义的变量
+
+
+
+
+
+
+
