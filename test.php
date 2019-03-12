@@ -35,3 +35,12 @@ switch ($flag){
     default:
         break;
 }
+
+/*
+ * echo isset(array(array()));这么写报错
+ * empty(array()) 返回true; empty(array(array()))返回false;
+ * 返回false 使用echo 不输出
+ * 返回true 使用echo 输出 1
+ */
+echo isset($error);
+echo empty(array());
