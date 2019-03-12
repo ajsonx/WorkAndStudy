@@ -19,10 +19,18 @@ var_dump(printf("%d",$i));
 
 /*
  * 函数名不区分大小写
+ * 可以以下划线开头,不能以数字开头
+ * 一般以下划线开头的变量或方法，代表类的私有成员
  */
 $a = 'ab';
 echo gettype($a);
-echo GETTYPe($a);
+echo GETTYPe($a).PHP_EOL;
+$_arg = 's';
+function _print(){
+    global $_arg;
+    print $_arg.PHP_EOL;
+}
+_print();
 
 /*
  * 变量未赋值都是null
@@ -94,6 +102,39 @@ $str_ans = implode($ans);
 
 echo $str_ans.PHP_EOL;
 
+
 /*
+ * $a['12345']=1;
+ * $a[12345]=null;
+ * 执行以上两行代码后，
+ * isset($a[12345])和empty($a['12345'])的结果分别是_____
  *
+ * 首先 这两行代码顺序执行，其次变量赋值为 null 时会释放内存
+ * 并且 $a['12345'] 等价于 $a[12345]
+ * 所以答案为 false true
  */
+
+/*
+ * array('a')+array('b') 的结果是____________?
+ * 它们的 key 值都为 0 ，前者不会被后者覆盖 所以值还是 a
+ */
+$a =  array([
+    '0' => 'a'],[
+    2 => 'b',
+    3 => 'c',
+]);
+
+$b =  array(3 =>[
+    1 => 'e',
+    2 => 'f',
+    3 => 'g',
+    4 => 'f',
+]);
+
+var_dump($a+$b);
+
+var_dump(array('1'=> 'c') + array('2' => 'b'));
+
+//拓展：同一个数组里，后者会覆盖前者，输出 'e' 因为 '1' == 1
+$c = ['1' => 'c','1' => 'b', 1 => 'e'];
+var_dump($c);
