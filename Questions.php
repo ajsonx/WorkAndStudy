@@ -7,7 +7,7 @@
  * Time: 16:15
  */
 
-/*
+/**
  * 最里层打印 $i 的值 111
  * 外层打印 $i 的类型 3 (INT(3) )
  * 再有就是打印 3 的类型 1 (INT(1) )
@@ -17,7 +17,7 @@ printf("%d\n",printf("%d",$i));
 printf("%d\n",printf("%d",printf("%d",printf("%d",$i))));
 var_dump(printf("%d",$i));
 
-/*
+/**
  * 函数名不区分大小写
  * 可以以下划线开头,不能以数字开头
  * 一般以下划线开头的变量或方法，代表类的私有成员
@@ -32,7 +32,7 @@ function _print(){
 }
 _print();
 
-/*
+/**
  * 变量未赋值都是null
  * ++ 变成 1
  */
@@ -41,7 +41,7 @@ echo $count; //未赋值是Null 什么也不输出
 $count++;  //变成1
 echo $count.PHP_EOL;
 
-/*
+/**
  * str_split($str,$length)
  * 原字符串，分割到每个数组的长度 默认是1
  * 把字符串分割到数组中
@@ -52,7 +52,7 @@ foreach ($arr as $v){
     printf("%s",$v);
 }echo PHP_EOL;
 
-/*
+/**
  * 身份证正则表达式
  * 限制 首位不为0 1800-2300 日期
  */
@@ -65,7 +65,7 @@ $pattern1 = '/^(?:[1-9]\d{5})$/';
 var_dump(preg_match($pattern1,$str1,$matchs));
 var_dump($matchs);
 
-/*
+/**
  * 正则表达式反向引用
  * preg_replace($pattern,$replacement,$str);
  * 正则，替换串，原字符串
@@ -75,7 +75,7 @@ $pattern = '/(\w+) (\d+),(\d+)/i';
 $replacement = '${1}22,$3';
 echo preg_replace($pattern,$replacement,$str);
 
-/*
+/**
  * 输入格式为"get-element-by-id"的任意字符串，将其转换为驼峰命名的字符串。
  * 例如getElementById
  * strtok($str,$split)
@@ -103,7 +103,7 @@ $str_ans = implode($ans);
 echo $str_ans.PHP_EOL;
 
 
-/*
+/**
  * $a['12345']=1;
  * $a[12345]=null;
  * 执行以上两行代码后，
@@ -114,7 +114,7 @@ echo $str_ans.PHP_EOL;
  * 所以答案为 false true
  */
 
-/*
+/**
  * array('a')+array('b') 的结果是____________?
  * 它们的 key 值都为 0 ，前者不会被后者覆盖 所以值还是 a
  */

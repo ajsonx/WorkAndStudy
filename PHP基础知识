@@ -45,9 +45,10 @@ $test的值为"$a ab"; heredoc中不解析变量 EOC可替换为其他字符
 11.Boolean 为false 的其他类型有
 false，0，0.0，空字符串，'0'，空数组，NULL,未定义的变量
 
-
-
-
-
+12.SAPI(Server Application Programming Interface)
+SAPI提供了一个 PHP 和外部通信的接口
+常见的有：CGI，FAST-CGI，CLI，DLL
+CGI 即通用网关接口（Commom Gateway Interface） fork and execute模式
+FAST-CGI
 
 

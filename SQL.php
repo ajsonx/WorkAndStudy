@@ -79,6 +79,13 @@ try{
 }catch (PDOException $e){
     echo $e->getMessage();
 }
+try{
+    $pdo->query('sql WHERE replace_id = ? AND group_id = ?"'
+            ,['用于代替 ？ 的参数，PDO预处理，防止sql注入']);
+}catch (PDOException $e){
+    echo $e->getMessage();
+}
+
 /*
  * MySQLi
  * 只支持MySQL操作、预处理、面向对象和过程、效率高
