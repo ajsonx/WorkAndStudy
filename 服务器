@@ -34,7 +34,15 @@ at>/
     创建ORACLE实例： docker run --name oracle -p 1521:1521 -p 5500:5500 -v /Users/[username]/oradata:/opt/oracle/oradata oracle/database:12.2.0.1-ee
     重新设置密码： docker exec oracle ./setPassword.sh XXXXXX
     navicat连接oracle 🌟服务名：orclcdb 角色 SYSDBA
-  nginx 配置
-  location = / { break } 这个意思是域名后遇到 / 则break 如：www.baseapi.com/  403 forbidden
+5.nginx 配置
+    location = / { break } 这个意思是域名后遇到 / 则break 如：www.baseapi.com/  403 forbidden
+    underscores_in_headers on; 把自动去掉Header头信息中带下划线的配置关闭
+
+
+  5.23踩坑
+1.setcookie() ---> $_COOKIE
+2.file_get_contents(url) ---> json_decode()
+3.sso登陆流程
+
 
 
