@@ -9,40 +9,4 @@ at>/
 2vi/vim编辑器
 3shell基础
 
-  本机配置
-1.MacOS HighSierra 10.13.6
-2.PHP7.2.17 /usr/bin/php
-    php-fpm /usr/local/Cellar/php\@7.2/7.2.17_1/sbin/php-fpm
-3.nginx1.15.12
-4.mysql8.0.16
-
-
-  修改域名配置
-1.nginx添加域名信息
-2.修改hosts
-3.修改前端请求url
-
-  配置新项目
-1.tangram build
-2.composer install
-3.README.MD中的注意事项
-    安装php-ladp
-    安装php-oci8 首先装 instantclient 三个相关的包，解压到/usr/local/instantclient 后建立软连接 到 /usr/local/lib/
-        编译命令加上 ./configure --with-oci8=shared,instantclient,/usr/local/instantclient
-4.docker安装ORACLE
-    部署ORACLE软件在docker中： oracle镜像已经下载好，直接在12.xxxx 下运行./buildDockerImage.sh -v 12.xxxx -e
-    创建ORACLE实例： docker run --name oracle -p 1521:1521 -p 5500:5500 -v /Users/[username]/oradata:/opt/oracle/oradata oracle/database:12.2.0.1-ee
-    重新设置密码： docker exec oracle ./setPassword.sh XXXXXX
-    navicat连接oracle 🌟服务名：orclcdb 角色 SYSDBA
-5.nginx 配置
-    location = / { break } 这个意思是域名后遇到 / 则break 如：www.baseapi.com/  403 forbidden
-    underscores_in_headers on; 把自动去掉Header头信息中带下划线的配置关闭
-
-
-  5.23踩坑
-1.setcookie() ---> $_COOKIE
-2.file_get_contents(url) ---> json_decode()
-3.sso登陆流程
-
-
 
