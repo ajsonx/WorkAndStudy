@@ -155,10 +155,71 @@ echo ${$first['name']};
 	无内置解释性语言，解析脚本语言的进程则在Nginx之外。
 	对于静态资源，Apache也有自己的优势。
 
-* HTTP Server优化
+* HTTP Server优化（以下配置可在代理服务器开启，如Nginx）
 	* 缓存静态文件 
 	* HTTP Keep-alive (与TCP的Keepalive不同 )
-		TCP链接数减少，后续请求和响应无需打开新链接
-	* 
+		1.cpu和内存占用减少。TCP链接数减少，后续请求和响应无需打开新链接
+		2.请求等待时间减少
+	* GZIP压缩
+		将网络传输内容进行压缩后传递，同时，浏览器若支持GZIP压缩，服务器端程序在输出内容时便使用GZIP压缩
+	* 在Apache或Nginx关闭不必要的模块
+
+* 内容分发网络（CDN）
+	* 给用户就近节点访问，加速。
+	* 如何进行CDN节点的选择？ 参考`HTTP.智能DNS` 
+	 
+* CSS和JavaScript优化
+	* 合并
+	* 缩小
+
+* 一些工具
+	* Minify - php缩小合并文件
+	* Grunt - js 自动化任务
+	* Varnish web应用程序加速器
+	* HAProxy 负载均衡器
+
+# 提升数据库性能·第四章
+
+* 查询缓存
+	缓存了SELECT 查询及其结果数据集，同一个SELECT查询发生时，从内存中直接取出结果。
+	打开查询缓存 `show variables like `have_query_cache`; `
+	Mysql.md=>my.cnf
+
+* 存储引擎
+	修改存储引擎 `Alter table pkt_user ENGINE=INNODB`;
+	MyISAM和InnoDB存储引擎的区别详见 Mysql.md=>存储引擎
+	
+
+		
+* Mysql的一些辅助工具
+	* Percona Server
+	* phpMyAdmin
+	* Percona工具箱
+	* Percona XtraDB 集群 (PXC)
+
+* Redis
+	* 基础用法介绍
+	* Redis桌面管理 - RDM
 
 
+* Memcached 
+	* 类似于Redis，基础用法的介绍
+
+
+# 调试和分析·第五章
+
+* Xdebug拓展
+* Sublime Text调试
+
+# PHP应用的压力/负载测试·第六章
+
+
+
+
+
+# 总结
+
+	第5，6章的实践内容较多，需要自己去亲手操作，所谓的性能提升不能只停留在字面上，还需要利用各种工具，去观察实际的运行状况。
+	读完这本书，对于PHP7的一些新特性有相当的了解。
+	本书大章按一整套的开发流程，从php-sql-debug-测试。大部分讲了工具的使用。
+	技术和工具是不断更新的，还需要不断学习，才不会和社会脱节。
