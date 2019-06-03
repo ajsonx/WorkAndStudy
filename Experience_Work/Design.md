@@ -29,3 +29,6 @@
 	CommonControl 基础权限控制器
 		auth方法返回true/false 判断当前控制器用户是否有权限访问
 	xxControl 继承Common 调用auth
+	
+## 多种登陆方式如何判断？？
+
