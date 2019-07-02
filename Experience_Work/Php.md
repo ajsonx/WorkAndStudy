@@ -25,3 +25,21 @@ function merge ($str,$sp="|",$kv="=")
     eval("\$arr"." = $arr;");   // 把字符串作为PHP代码执行
     return $arr;
 }
+
+
+## 简化项目配置
+
+配置marketing 项目时 
+常规操作 `tangram build local`配置环境  +  `composer install` 
+进入到项目application/admin/public 下
+
+执行 `php -S localhost:8083 ./index.php `  
+
+## 该框架的设计方式？
+
+设计初衷
+多个service层是为了啥，已有C层，M层  service在这两个中间的作用？ 为了衔接什么？
+
+## X-sendfile blog
+
+## HTTP-Referer 阮一峰

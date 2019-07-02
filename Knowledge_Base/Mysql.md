@@ -37,3 +37,33 @@
 	
 
 
+
+# in和exists  
+测出来没感觉。。。可能数据太小了
+
+in 是把外表和内表作hash 连接，而exists是对外表作loop循环，每次loop循环再对内表进行查询。
+如果两个表中一个较小，一个是大表，则子查询表大的用exists，子查询表小的用in：
+例如：表A（小表），表B（大表）1：select * from A where cc in (select cc from B)
+效率低，用到了A表上cc列的索引；
+select * from A where exists(select cc from B where cc=A.cc)
+效率高，用到了B表上cc列的索引。
+
+相反的2：select * from B where cc in (select cc from A)
+效率高，用到了B表上cc列的索引；select * from B where exists(select cc from A where cc=B.cc)
+效率低，用到了A表上cc列的索引。
+not in 和not exists
+如果查询语句使用了not in 那么内外表都进行全表扫描，没有用到索引；
+而not extsts 的子查询依然能用到表上的索引。所以无论那个表大，用not exists都比not in要快。
+
+# 批量修改
+
+MySQL批量修改不同的记录为不同的值呢？
+UPDATE mytable SET
+    myfield = CASE id
+        WHEN 1 THEN 'value'
+        WHEN 2 THEN 'value'
+        WHEN 3 THEN 'value'
+    END
+WHERE id IN (1,2,3)
+
+
