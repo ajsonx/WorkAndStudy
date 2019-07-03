@@ -40,6 +40,3 @@ function merge ($str,$sp="|",$kv="=")
 设计初衷
 多个service层是为了啥，已有C层，M层  service在这两个中间的作用？ 为了衔接什么？
 
-## X-sendfile blog
-
-## HTTP-Referer 阮一峰

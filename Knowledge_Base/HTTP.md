@@ -41,3 +41,7 @@
 	传输层
 	网络层
 	数据链路层
+	
+## HTTP-Referer
+
+[阮一峰的Referer教程](http://www.ruanyifeng.com/blog/2019/06/http-referer.html)
