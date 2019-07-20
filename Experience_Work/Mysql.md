@@ -1,14 +1,12 @@
 
-## mac brew 安装的mysql
-* mysql -uroot -p
-
-Can 't connect to local MySQL server through socket '/tmp/mysql.sock '(2) ";
+## Mac brew 安装的mysql
+* `Can 't connect to local MySQL server through socket '/tmp/mysql.sock '(2) ";`
 
 无法通过tmp下的sock文件连接到数据库服务。缺失mysql.sock文件。
 
 解决 ： mysql启动方式有误 brew service restart mysql
 
-* Host '127.0.0.1' is not allowed to connect to this MySQL server
+* `Host '127.0.0.1' is not allowed to connect to this MySQL server`
 
 解决 ：/usr/local/etc/my.cnf  注释 # skip_name_resolve 然后restart
 
@@ -23,5 +21,5 @@ Can 't connect to local MySQL server through socket '/tmp/mysql.sock '(2) ";
 3 使用or条件会导致全表扫描，这时应该优化为union。此时可以命中索引
 
     select * from table where id!=1 union select * from table where id!=null;
-    
+
 4 使用explain
