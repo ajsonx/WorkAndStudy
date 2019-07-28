@@ -14,23 +14,29 @@
     * 静态方法中不能使用$this 因为对象还没创建
 
 ## 关于函数
-* `array_merge` 合并两个数组，不改变键值。类似的还有
-`array_combine` array_combine() - 创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
-`array_push` 但会改变健名
-array_merge_recursive() 不会进行键名覆盖，而是将多个相同键名的值递归组成一个数组。“该函数与 array_merge() 函数的区别在于处理两个或更多个数组元素有相同的键名时。
+* `array_merge` 合并两个数组，不改变键值。类似的还有`array_combine` 
 
-```
-string TranAbbr=IPER|AcqSsn=000000073601|MercDtTm=20090615144037
-        => 'TranAbbr' => 'IPER' 
-再变成数组
+ - 创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
 
+* `array_push` 但会改变健名
+
+* `array_merge_recursive`不会进行键名覆盖，而是将多个相同键名的值递归组成一个数组。
+
+	该函数与 `array_merge` 函数的区别在于处理两个或更多个数组元素有相同的键名时。
+
+
+
+````
 function merge ($str,$sp="|",$kv="=")
 {
-    $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
+    $arr = str_replace(array($kv ,$sp ),
+        array('"=>"','","'), 'array("'.$str.'")');
+        
     eval("\$arr"." = $arr;");   // 把字符串作为PHP代码执行
     return $arr;
 }
-```
+
+````
 
 
 
@@ -66,5 +72,13 @@ function merge ($str,$sp="|",$kv="=")
     6. 以本地处理的形式时，会受本地的php缓存大小影响，因此会出现溢出等问题。
            
     7. 但其实是在 FALSE  情况下失败              
+
+
+## 请求头是 Content-type: application/json
+
+* 旧版本php： `$GLOBALS ["HTTP_RAW_POST_DATA"]
+`
+* 新版本的PHP 改用 `file_get_contents('php://input')
+`
 
 
