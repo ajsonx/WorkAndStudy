@@ -1,14 +1,26 @@
 # 常用易忘Linux命令
 
-> 收集
+
+* 命令详解主要针对`UNIX`风格的系统 
+
+> UNIX 风格，选项可以组合在一起，并且选项前必须有“-”连字符
+
+> BSD 风格，选项可以组合在一起，但是选项前不能有“-”连字符
+
+> GNU 风格的长选项，选项前有两个“-”连字符
+
+> Mac 命令行多是BSD风格，可以输入 man ps 查看详情
+
 
 ## 根据端口号查找PID
 
-* `lsof -i:`
-* `netstat`
+1.  `lsof -i:端口号`
 
+1.  `netstat -tunlp|grep 端口号`
 
-### `Netstat`命令拓展
+> Mac下推荐第一种方式
+
+### `Netstat`命令详解
 
 * `netstat -a` 列出当前所有连接
 * `netstat -t/-u` 列出tcp/udp 协议的连接
@@ -24,6 +36,33 @@
 * `netstat -c` 持续输出
 
 ## 根据PID查找进程执行文件
+
+1.`ps -aux | grep PID`
+
+### `ps`命令详解
+
+* ps命令支持三种使用的语法格式
+
+* `ps -a` 显示当前所有进程，同时加上`x`参数会显示没有控制终端的进程。
+
+	结果默认会显示4列信息。
+
+	PID: 运行着的命令(CMD)的进程编号
+	
+	TTY: 命令所运行的位置（终端）
+	
+	TIME: 运行着的该命令所占用的CPU处理时间
+	
+	CMD: 该进程所运行的命令
+* `ps -ax` 这个命令的结果或许会很长。为了便于查看，可以结合less命令和管道来使用。 `ps -ax | less`
+
+* `ps -u root` 根据特定用户过滤进程
+* `ps -aux | less` 根据内存和cpu用量来过滤  `|grep mysql` 来过滤进程
+* `ps -aux --sort -pcpu/pmem | less` 根据cpu/内存 升序显示
+* `ps -L PID` 根据线程来过滤进程
+* `ps -axjf` 树形显示进程
+* `watch -n 1 ‘ps -aux --sort -pmem, -pcpu’ `结合watch命令，使用PS实时监控进程状态 `-n 1` 每秒刷新一次。 `|head 20` 限制前20条
+
 
 
 
