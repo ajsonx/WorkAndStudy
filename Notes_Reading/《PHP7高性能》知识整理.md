@@ -31,17 +31,17 @@ echo age(1.1);
 	use Publishers\Packt\{Book,Ebook,Video,Presentation};
 	use function Publishers\Packt\{getBook,saveBook};
 	use const Publishers\Packt\{COUNT,KEY};
-````
+	````
 * 混合模式
 
 	````
 	use Publishers\Packt\{Book,Ebook,getBook,COUNT};
 	````
 * 复合模式
-
 	````
 	use Publishers\Packt\{Paper\Book,Electronic\Ebook,Media\Video};
 	````
+
 
 ## 匿名类
 
