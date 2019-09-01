@@ -31,7 +31,7 @@ echo age(1.1);
 	use Publishers\Packt\{Book,Ebook,Video,Presentation};
 	use function Publishers\Packt\{getBook,saveBook};
 	use const Publishers\Packt\{COUNT,KEY};
-````
+	````
 * 混合模式
 
 	````

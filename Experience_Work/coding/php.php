@@ -25,6 +25,7 @@ class Foo implements iFoo
     -> bar ("Barney")
     -> bar ("Betty");
 
+
 /**
  * 报错如下：
  * Fatal error: Declaration of Foo::bar(string $baz): Foo must be compatible with iFoo::bar(string $baz): iFoo in /usr/local/var/www/php_study/Experience_Work/coding/php.php on line 13

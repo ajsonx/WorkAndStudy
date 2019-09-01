@@ -15,3 +15,4 @@
   而flush, 严格来讲, 这个只有在PHP做为apache的Module(handler或者filter)安装的时候, 才有实际作用. 它是刷新WebServer(可以认为特指apache)的缓冲区
 
   [ob_flush和flush的深入理解](https://blog.csdn.net/superhosts/article/details/42292053)
+

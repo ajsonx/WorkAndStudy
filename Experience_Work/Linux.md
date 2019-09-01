@@ -65,4 +65,25 @@
 
 
 
+## SSH 连接、远程上传下载文件
+
+* 将 文件/文件夹 从远程  拷至本地 (scp) 
+  `$scp -r username@192.168.0.1:/home/username/remotefile.txt /usr/local`
+* 将 文件/文件夹 从本地拷至远程 (scp) 
+  `$scp -r localfile username@192.168.0.1:/home/username/`
+
+
+
+## Mac ssh免密连接、Tree命令
+
+* 创建`.ssh/`目录下文件名为  `authorized_keys`的文件，写入连接主机的 `id_rsa.pub` 密钥
+
+* `Tree -L N` 输出N级的结构
+
+  * `Tree -L 2 >Readme.md` 输入结构到文件中
+  * `Tree -d` 只显示文件夹
+
+  
+
+## w
 

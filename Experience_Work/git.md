@@ -10,4 +10,12 @@
 
 	`git branch --set-upstream=origin/remote_branch local_branch`
 
-* 
+* 清除缓存
+
+    `git rm -r --cache .`
+
+    `git add .`
+
+    
+
+    
