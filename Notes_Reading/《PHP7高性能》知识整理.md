@@ -1,7 +1,5 @@
 # PHP7新特性·第二章
 
-## 类型声明
-
 ### 形参类型声明
 
 ````
@@ -38,10 +36,10 @@ echo age(1.1);
 	use Publishers\Packt\{Book,Ebook,getBook,COUNT};
 	````
 * 复合模式
-
 	````
 	use Publishers\Packt\{Paper\Book,Electronic\Ebook,Media\Video};
 	````
+
 
 ## 匿名类
 
